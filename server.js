@@ -6,6 +6,9 @@ const app = express();
 // Connect Database
 connectDB();
 
+// Init Middleware
+app.use(express.json({ extended: false })); // Allows to retrieve data in req.body from user.js line 8
+
 app.get('/', (req, res) => res.send('AIP Running'));
 
 // Define routes
