@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const config = require('config');
+const keys = require('../config/keys');
 
 // Exports a middleware function that contains the req, res object
 module.exports = function (req, res, next) {
@@ -14,7 +14,7 @@ module.exports = function (req, res, next) {
     // Verify token 
     try {
         // Decodes the token
-        const decoded = jwt.verify(token, config.get('jwtSecret'));
+        const decoded = jwt.verify(token, keys.jwtSecret);
 
         // Take decoded object containing the user info and 
         // stores is in req.user to be used in other routes
