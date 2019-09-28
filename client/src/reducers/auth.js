@@ -1,3 +1,4 @@
+// Bring in actions
 import {
     REGISTER_SUCCESS,
     REGISTER_FAIL,
@@ -8,6 +9,7 @@ import {
     LOGOUT
 } from '../actions/types';
 
+// Create the intial state
 const initialState = {
     token: localStorage.getItem('token'),
     isAuthenticated: null,
