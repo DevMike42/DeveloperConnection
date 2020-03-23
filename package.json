@@ -7,7 +7,8 @@
     "start": "node server",
     "server": "nodemon server",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "preinstall": "npx npm-force-resolutions"
   },
   "author": "Michael Rivera",
   "license": "ISC",
@@ -24,6 +25,10 @@
   },
   "devDependencies": {
     "concurrently": "^4.1.2",
+    "minimist": "^1.2.5",
     "nodemon": "^1.19.4"
+  },
+  "resolutions": {
+    "minimist": "^1.2.5"
   }
 }
